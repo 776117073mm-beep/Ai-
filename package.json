@@ -1,0 +1,19 @@
+{
+  "name": "ai-creative-studio-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/shared/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @ai-creative-studio/web",
+    "build": "npm run build --workspace @ai-creative-studio/web",
+    "typecheck": "tsc -b",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.10"
+  }
+}

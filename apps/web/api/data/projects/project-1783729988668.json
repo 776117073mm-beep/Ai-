@@ -1,0 +1,61 @@
+{
+  "id": "project-1783729988668",
+  "name": "Validation Project",
+  "version": 1,
+  "createdAt": "2026-07-11T00:33:08.668Z",
+  "updatedAt": "2026-07-11T00:33:09.210Z",
+  "assets": [
+    {
+      "id": "asset-1783729989210",
+      "name": "testclip.mp4",
+      "path": "/workspaces/Ai-/apps/web/api/data/uploads/1783729988703.mp4",
+      "thumbnailUrl": "/media/project-1783729988668/1783729988785-thumb.png",
+      "proxyUrl": "/media/project-1783729988668/1783729988785-proxy.mp4",
+      "waveformUrl": "/media/project-1783729988668/1783729988785-wave.json",
+      "analysis": {
+        "source": "/workspaces/Ai-/apps/web/api/data/uploads/1783729988703.mp4",
+        "originalName": "testclip.mp4",
+        "durationSeconds": 1,
+        "width": 128,
+        "height": 72,
+        "fps": 24,
+        "codec": "h264",
+        "audioChannels": 1,
+        "audioSampleRate": 44100,
+        "metadata": {
+          "formatName": "mov,mp4,m4a,3gp,3g2,mj2",
+          "size": 14765
+        },
+        "thumbnailPath": "/workspaces/Ai-/apps/web/api/data/uploads/project-1783729988668/1783729988785-thumb.png",
+        "proxyPath": "/workspaces/Ai-/apps/web/api/data/uploads/project-1783729988668/1783729988785-proxy.mp4",
+        "waveformPath": "/workspaces/Ai-/apps/web/api/data/uploads/project-1783729988668/1783729988785-wave.json"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "clip-1783729989210",
+      "assetId": "asset-1783729989210",
+      "trackId": "video-1",
+      "startFrame": 0,
+      "durationFrames": 24,
+      "trimIn": 0,
+      "trimOut": 24
+    }
+  ],
+  "settings": {
+    "playhead": 0,
+    "zoom": 1,
+    "playbackRate": 1,
+    "workspace": {
+      "leftCollapsed": false,
+      "rightCollapsed": false,
+      "aiCollapsed": true
+    }
+  },
+  "workspace": {
+    "leftCollapsed": false,
+    "rightCollapsed": false,
+    "aiCollapsed": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "project-1783729442885",
+  "name": "Validation Project",
+  "version": 1,
+  "createdAt": "2026-07-11T00:24:02.885Z",
+  "updatedAt": "2026-07-11T00:24:02.885Z",
+  "assets": [],
+  "timeline": [],
+  "settings": {
+    "playhead": 0,
+    "zoom": 1,
+    "playbackRate": 1,
+    "workspace": {
+      "leftCollapsed": false,
+      "rightCollapsed": false,
+      "aiCollapsed": true
+    }
+  },
+  "workspace": {
+    "leftCollapsed": false,
+    "rightCollapsed": false,
+    "aiCollapsed": true
+  }
+}
