@@ -180,40 +180,55 @@ export function VideoEditorApp() {
     setUploadProgress(10);
     setMediaStatus('Preparing import...');
 
+    let currentProject = project;
+    let currentAssets = assets;
+    let currentTimeline = timeline;
+
     for (const file of Array.from(files)) {
       try {
         setUploadProgress(20);
         setMediaStatus(`Analyzing ${file.name}`);
+        console.log('[frontend] selected file', file.name, file.type, file.size);
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('filename', file.name);
+
+        console.log('[frontend] upload request', `${API_BASE}/api/projects/${project.id}/import`);
         const response = await fetch(`${API_BASE}/api/projects/${project.id}/import`, {
           method: 'POST',
-          headers: { 'x-file-name': file.name },
-          body: file
+          body: formData
         });
         const payload = await response.json();
+        console.log('[frontend] api response', payload);
         if (!response.ok) throw new Error(payload.error || 'Import failed');
 
-        const nextAssets = [...assets, payload.asset];
-        const nextTimeline = [...timeline, payload.clip];
-        const nextProject: ProjectState = {
-          ...project,
+        const nextAssets = [...currentAssets, payload.asset];
+        const nextTimeline = [...currentTimeline, payload.clip];
+        currentAssets = nextAssets;
+        currentTimeline = nextTimeline;
+        currentProject = {
+          ...currentProject,
           assets: nextAssets,
           timeline: nextTimeline,
           settings: {
-            ...project.settings,
+            ...currentProject.settings,
             playhead: 0,
             zoom
           },
           workspace
         };
-        setProject(nextProject);
+
+        setProject(currentProject);
         setAssets(nextAssets);
         setTimeline(nextTimeline);
         setCurrentAssetId(payload.asset.id);
         setSelectedClipId(payload.clip.id);
         setUploadProgress(90);
         setMediaStatus(`Imported ${file.name}`);
-        await saveProject(nextProject);
+        await saveProject(currentProject);
       } catch (err) {
+        console.error('[frontend] import failed', err);
         setError(err instanceof Error ? err.message : 'Import failed');
       }
     }
